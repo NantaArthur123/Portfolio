@@ -9,9 +9,9 @@ export interface Project {
 	tags: number[];
 	img: string;
 	source: boolean;
-    desc: string;
-    year: number;
-    maintained: boolean;
+    desc?: string;
+    year?: number;
+    maintained?: boolean;
 }
 
 

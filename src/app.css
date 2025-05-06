@@ -1,2 +1,30 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@plugin "@tailwindcss/typography";
+@variant dark (&:where(.dark, .dark *));
+body,
+header,
+nav,
+main,
+footer,
+aside {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		transform 0.3s ease;
+}
+
+body {
+	@apply dark:bg-midnight-900 bg-salt-600 text-salt-text font-mono dark:text-gray-100;
+}
+
+@theme {
+	--color-midnight-500: #262635;
+	--color-midnight-900: #171720;
+	--color-midnight-text: #ffffff;
+	--color-bee-500: #e8ef1b;
+	--color-salt-100: #cdc6ec;
+	--color-salt-400: #b2a4e1;
+	--color-salt-600: #977fd3;
+	--color-salt-text: #332451;
+	--color-ash-100: #e6e8e5;
+}

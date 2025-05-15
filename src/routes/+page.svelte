@@ -13,11 +13,13 @@
 	></div>
 </div>
 <div class="flex flex-col gap-4">
-	<div class="flex flex-wrap">
-		<div
-			class="dark:bg-midnight-500 bg-salt-100 flex min-w-[200px] items-center truncate rounded-md p-4"
-		>
-			<Motto />
+	<div class="container mx-auto px-6">
+		<div class="flex flex-wrap">
+			<div
+				class="dark:bg-midnight-500 bg-salt-100 flex min-w-[200px] items-center truncate rounded-md p-4"
+			>
+				<Motto />
+			</div>
 		</div>
 	</div>
 

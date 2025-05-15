@@ -97,103 +97,110 @@
 	];
 </script>
 
-<div
-	class="bg-salt-100 dark:bg-midnight-500 flex flex-col items-center rounded-lg shadow-sm md:flex-row"
->
-	<div class="dark:bg-midnight-500 bg-salt-100 flex w-full rounded-md p-4">
-		<div class="w-full space-y-4">
-			<details class="group border-salt-200 dark:border-midnight-text w-full rounded-lg border p-4">
-				<summary
-					class="text-salt-text dark:text-midnight-text w-full cursor-pointer text-lg font-semibold"
-					>Work Experience</summary
+<div class="container mx-auto px-6">
+	<div
+		class="bg-salt-100 dark:bg-midnight-500 flex flex-col items-center rounded-lg shadow-sm md:flex-row"
+	>
+		<div class="dark:bg-midnight-500 bg-salt-100 flex w-full rounded-md p-4">
+			<div class="w-full space-y-4">
+				<details
+					class="group border-salt-200 dark:border-midnight-text w-full rounded-lg border p-4"
 				>
-				<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
-					{#each workExperience as item}
-						<li class="ms-4 mb-10">
-							<div
-								class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
-							></div>
-							<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
-								>{item.date}</time
-							>
-							<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
-								{item.title}
-							</h3>
-							{#if item.subtitle}
-								<p class="text-sm text-gray-500 italic dark:text-gray-400">{item.subtitle}</p>
-							{/if}
-							{#each item.content as point}
-								<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
-							{/each}
-						</li>
-					{/each}
-				</ol>
-			</details>
+					<summary
+						class="text-salt-text dark:text-midnight-text w-full cursor-pointer text-lg font-semibold"
+						>Work Experience</summary
+					>
+					<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
+						{#each workExperience as item}
+							<li class="ms-4 mb-10">
+								<div
+									class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
+								></div>
+								<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
+									>{item.date}</time
+								>
+								<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
+									{item.title}
+								</h3>
+								{#if item.subtitle}
+									<p class="text-sm text-gray-500 italic dark:text-gray-400">{item.subtitle}</p>
+								{/if}
+								{#each item.content as point}
+									<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
+								{/each}
+							</li>
+						{/each}
+					</ol>
+				</details>
 
-			<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
-				<summary class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
-					>Education</summary
-				>
-				<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
-					{#each education as edu}
-						<li class="ms-4 mb-10">
-							<div
-								class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
-							></div>
-							<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
-								>{edu.date}</time
-							>
-							<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
-								{edu.title}
-							</h3>
-							{#each edu.content as point}
-								<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
-							{/each}
-						</li>
-					{/each}
-				</ol>
-			</details>
+				<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
+					<summary
+						class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
+						>Education</summary
+					>
+					<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
+						{#each education as edu}
+							<li class="ms-4 mb-10">
+								<div
+									class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
+								></div>
+								<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
+									>{edu.date}</time
+								>
+								<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
+									{edu.title}
+								</h3>
+								{#each edu.content as point}
+									<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
+								{/each}
+							</li>
+						{/each}
+					</ol>
+				</details>
 
-			<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
-				<summary class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
-					>Organizational Experience</summary
-				>
-				<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
-					{#each organizationalExperience as org}
-						<li class="ms-4 mb-10">
-							<div
-								class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
-							></div>
-							<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
-								>{org.date}</time
-							>
-							<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
-								{org.title}
-							</h3>
-							{#if org.subtitle}
-								<p class="text-sm text-gray-500 italic dark:text-gray-400">{org.subtitle}</p>
-							{/if}
-							{#each org.content as point}
-								<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
-							{/each}
-						</li>
-					{/each}
-				</ol>
-			</details>
+				<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
+					<summary
+						class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
+						>Organizational Experience</summary
+					>
+					<ol class="border-salt-600 relative mt-4 border-l dark:border-gray-700">
+						{#each organizationalExperience as org}
+							<li class="ms-4 mb-10">
+								<div
+									class="border-salt-600 dark:border-midnight-text bg-salt-100 absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border dark:bg-gray-700"
+								></div>
+								<time class="mb-1 text-sm leading-none font-normal text-gray-400 dark:text-gray-500"
+									>{org.date}</time
+								>
+								<h3 class="dark:text-midnight-text text-lg font-semibold text-gray-900">
+									{org.title}
+								</h3>
+								{#if org.subtitle}
+									<p class="text-sm text-gray-500 italic dark:text-gray-400">{org.subtitle}</p>
+								{/if}
+								{#each org.content as point}
+									<p class="text-base font-normal text-gray-500 dark:text-gray-400">{point}</p>
+								{/each}
+							</li>
+						{/each}
+					</ol>
+				</details>
 
-			<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
-				<summary class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
-					>Skills</summary
-				>
-				<div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-					{#each skills as skill}
-						<span
-							class="bg-salt-200 dark:bg-midnight-600 dark:text-midnight-text inline-block rounded-full px-3 py-1 text-sm text-gray-800"
-							>{skill}</span
-						>
-					{/each}
-				</div>
-			</details>
+				<details class="group border-salt-text dark:border-midnight-text rounded-lg border p-4">
+					<summary
+						class="text-salt-text dark:text-midnight-text cursor-pointer text-lg font-semibold"
+						>Skills</summary
+					>
+					<div class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+						{#each skills as skill}
+							<span
+								class="bg-salt-200 dark:bg-midnight-600 dark:text-midnight-text inline-block rounded-full px-3 py-1 text-sm text-gray-800"
+								>{skill}</span
+							>
+						{/each}
+					</div>
+				</details>
+			</div>
 		</div>
 	</div>
 </div>

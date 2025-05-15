@@ -5,6 +5,6 @@
 </script>
 
 <Navbar />
-<div class="mb-16 p-5 md:ml-56">
+<div class="mx-auto mb-16 p-5 md:ml-56">
 	{@render children()}
 </div>

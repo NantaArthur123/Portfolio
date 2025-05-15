@@ -11,7 +11,7 @@
 	let filterBox: Tag[] = [];
 	let imageError: Record<number, boolean> = {};
 
-	const flipDurationMs = 300; // for flip anim, bigger = longer
+	const flipDurationMs = 100; // for flip anim, bigger = longer
 
 	// Code taken from https://github.com/isaacHagoel/svelte-dnd-action but changed to typescript, credit to original owner
 	$: filter = filterBox.length
@@ -26,7 +26,8 @@
 
 <div class="container mx-auto p-6">
 	<section class="mb-6">
-		<h2 class="mb-2 text-xl font-bold">Available Tags</h2>
+		<h2 class="text-xl font-bold">Tags</h2>
+		<p class="mb-2 text-xs">(Drag and drop to filter box :D)</p>
 		<div
 			use:dndzone={{
 				items: tagPool,

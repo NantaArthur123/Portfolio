@@ -10,7 +10,7 @@
 	class="dark:bg-midnight-500 bg-salt-100 fixed right-0 bottom-0 left-0 z-10 flex items-center justify-around border-t-2 border-yellow-400 py-3 text-sm font-bold md:hidden"
 >
 	<a href="/" class="hover:text-yellow-400 dark:text-white">./INDEX</a>
-	<a href="/" class="hover:text-yellow-400 dark:text-white">./PROJECT</a>
+	<a href="#project" class="hover:text-yellow-400 dark:text-white">./PROJECT</a>
 	<div class="relative">
 		<button
 			on:click={() => (isMenuOpen = !isMenuOpen)}

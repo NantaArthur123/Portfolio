@@ -24,7 +24,7 @@
 	};
 </script>
 
-<div class="container mx-auto p-6">
+<div class="container mx-auto p-6" id="project">
 	<section class="mb-6">
 		<h2 class="text-xl font-bold">Tags</h2>
 		<p class="mb-2 text-xs">(Drag and drop to filter box :D)</p>
@@ -82,55 +82,67 @@
 
 	<section>
 		<h2 class="mb-4 text-xl font-bold">Project Gallery</h2>
+
 		{#if filter.length === 0}
 			<div class="bg-salt-100 dark:bg-midnight-500 rounded-lg py-10 text-center">
 				<p>No projects match your filter criteria</p>
 			</div>
 		{:else}
-			<div class="columns-2 gap-6 space-y-6 sm:columns-3 lg:columns-6">
+			<!-- 1. Still use CSS columns for masonry -->
+			<div class="columns-2 gap-6 space-y-6 sm:columns-3 lg:columns-4">
 				{#each filter as project (project.id)}
+					<!-- 2. Card itself is break-inside-avoid, but no fixed heights anywhere -->
 					<div
-						class="bg-salt-100 dark:bg-midnight-500 mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md transition hover:shadow-lg"
+						class="mb-6 break-inside-avoid overflow-hidden rounded-lg shadow-md transition hover:shadow-lg"
 					>
+						<!-- 3. Make the image container RELATIVE so we can absolutely-position both the gradient and text -->
 						{#if !imageError[project.id]}
-							<img src={project.img} alt={project.name} class="w-full object-cover" />
+							<div class="relative w-full rounded">
+								<!-- Let the img size itself naturally -->
+								<img
+									src={project.img}
+									alt={project.name}
+									class="block h-auto min-h-72 w-full rounded object-cover"
+								/>
+
+								<!-- 4. Bottom fade -->
+								<div
+									class="from-salt-600/70 absolute inset-x-0 bottom-0 h-52 rounded bg-gradient-to-t to-transparent dark:from-black/80"
+								></div>
+
+								<!-- 5. Overlay your title + badges/text on top of that fade -->
+								<div class="absolute right-4 bottom-4 left-4">
+									<h3 class="text-shadow-salt-100 text-shadow text-lg leading-snug font-bold">
+										{project.name}
+									</h3>
+
+									<div
+										class={`mt-2 inline-block rounded px-2 py-1 text-xs ${
+											project.source ? 'bg-bee-500 text-salt-text' : 'bg-ash-100 text-salt-text'
+										}`}
+									>
+										{project.source ? 'Open Source' : 'Closed Source'}
+									</div>
+
+									<div class="mt-2 flex flex-wrap gap-1">
+										{#each project.tags as tid}
+											<span
+												class="bg-salt-400 dark:bg-midnight-900 rounded px-2 py-1 text-xs transition"
+											>
+												{getTagName(tid, tagPool, filter)}
+											</span>
+										{/each}
+									</div>
+								</div>
+							</div>
 						{:else}
+							<!-- fallback placeholder stays same -->
 							<div
 								class="flex h-48 w-full items-center justify-center bg-gray-200 dark:bg-gray-700"
 							>
-								<svg
-									class="h-10 w-10 text-gray-400 dark:text-gray-600"
-									fill="currentColor"
-									viewBox="0 0 20 18"
-									xmlns="http://www.w3.org/2000/svg"
-									aria-hidden="true"
-								>
-									<path
-										d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
-									/>
-								</svg>
+								…svg…
 							</div>
 						{/if}
-
-						<div class="p-4">
-							<div class="mb-2 flex items-center justify-between">
-								<h3 class="text-lg font-bold">{project.name}</h3>
-								<span
-									class={`rounded-full px-2 py-1 text-xs ${
-										project.source ? 'bg-bee-500 text-salt-text' : 'bg-ash-100 text-salt-text'
-									}`}
-								>
-									{project.source ? 'Open Source' : 'Closed Source'}
-								</span>
-							</div>
-							<div class="flex flex-wrap gap-1">
-								{#each project.tags as tid}
-									<span class="bg-salt-400 dark:bg-midnight-900 rounded px-2 py-1 text-xs">
-										{getTagName(tid, tagPool, filter)}
-									</span>
-								{/each}
-							</div>
-						</div>
 					</div>
 				{/each}
 			</div>

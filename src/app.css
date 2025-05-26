@@ -14,7 +14,11 @@ aside {
 }
 
 body {
-	@apply dark:bg-midnight-900 bg-salt-600 text-salt-text font-mono dark:text-gray-100;
+	@apply dark:bg-midnight-900 bg-salt-100 text-salt-text font-mono dark:text-gray-100;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 @theme {
@@ -22,9 +26,10 @@ body {
 	--color-midnight-900: #171720;
 	--color-midnight-text: #ffffff;
 	--color-bee-500: #e8ef1b;
-	--color-salt-100: #cdc6ec;
-	--color-salt-400: #b2a4e1;
-	--color-salt-600: #977fd3;
+	--color-salt-100: #ffffff;
+	--color-salt-400: #f3f6f9;
+	--color-salt-600: #e4e8ec;
 	--color-salt-text: #332451;
 	--color-ash-100: #e6e8e5;
+	--color-sun-500: #eaeac9;
 }

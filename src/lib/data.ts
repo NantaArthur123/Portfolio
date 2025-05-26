@@ -24,5 +24,6 @@ export const tagPool: Tag[] = [
 export const projects: Project[] = [
 	{ id: 1, name: "PPID App", tags: [2, 15, 18], img: "/image/ppid.png", source: false },
 	{ id: 2, name: "VKesra", tags: [2, 15, 18], img: "/image/vkesra.png", source: false },
-	{ id: 3, name: "JAMUDB", tags: [9, 5, 14, 11, 16], img: "/image/jamudb.png", source: true }
+	{ id: 3, name: "JAMUDB", tags: [9, 5, 14, 11, 16], img: "/image/jamudb.png", source: true },
+	{ id: 4, name: "Portfolio", tags: [4,5,7,11,14], img: "", source: true }
 ];

@@ -9,4 +9,5 @@
 	} catch (e) {
 		console.log('Theme Init is failed sadkek');
 	}
+	// NOTE FOR NEXT UPDATE: BRO FIX THE MULTIPLE TRANSITION METHOD LOL
 })();
